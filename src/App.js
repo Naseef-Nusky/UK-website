@@ -11,6 +11,7 @@ import AccordionFAQ from './components/AccordionFAQ.jsx';
 import TestimonialSlider from './components/TestimonialSlider.jsx';
 import ContactFormSection from './components/ContactBottom.jsx';
 import Footer from './components/Footer.jsx';
+import HomePage from './pages/Home.jsx';
 
 // Pages (single service pages)
 // import Home from './pages/Home.jsx'; // optional, or same as main App content
@@ -52,7 +53,7 @@ function App() {
             path="/"
             element={
               <main>
-                <HeroSection
+                {/* <HeroSection
                   formData={formData}
                   handleInputChange={handleInputChange}
                   handleSubmit={handleSubmit}
@@ -60,10 +61,12 @@ function App() {
                 />
                 <WhyChooseUs />
                 <ThreeSteps />
-             <ServicesGrid latestOnly={true} />
+        
 
                 <AccordionFAQ />
-                <TestimonialSlider />
+                <TestimonialSlider /> */}
+                <HomePage />
+                <ServicesGrid latestOnly={true} />
                 <ContactFormSection />
               </main>
             }
