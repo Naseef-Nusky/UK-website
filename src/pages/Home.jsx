@@ -8,7 +8,7 @@ const HomePage = () => {
         className="relative min-h-[60vh] flex items-center justify-center bg-no-repeat bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://www.hendersonthomasinvestigations.com/wp-content/uploads/2024/10/dreamstime_l_134537072-scaled.jpg')",
+            "url('hero.jpg')",
         }}
       >
         {/* Overlay */}
