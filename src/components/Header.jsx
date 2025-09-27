@@ -46,7 +46,7 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center">
           <img
-            src="https://www.hendersonthomasinvestigations.co.uk/wp-content/uploads/2025/02/henderson-thomas-investigations.png"
+            src="/logo.png"
             alt="Henderson Thomas Investigations"
             className="h-10 md:h-12 w-auto"
           />

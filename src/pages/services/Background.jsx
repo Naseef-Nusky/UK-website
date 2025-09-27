@@ -7,7 +7,7 @@ const BackgroundCheck = () => {
       <div
         className="relative w-full h-96 md:h-[500px] flex items-center justify-center text-center"
         style={{
-          backgroundImage: `url('https://www.hendersonthomasinvestigations.com/wp-content/uploads/2024/10/grove-5.jpg')`,
+          backgroundImage: `url('/background-single.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

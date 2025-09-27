@@ -2,7 +2,7 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import ContactFormSection from "../components/ContactBottom";
 const AboutUs = () => {
-  const image = "https://www.hendersonthomasinvestigations.com/wp-content/uploads/2024/10/grove-5.jpg";
+  const image = "/background.jpg"; // Replace with your image path
 
   return (
     <section className="py-24 bg-gray-50">

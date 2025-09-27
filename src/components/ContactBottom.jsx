@@ -1,30 +1,36 @@
-import React, { useState } from 'react';
-import { Phone } from 'lucide-react';
+import React, { useRef, useState } from "react";
+import { Phone } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const ContactFormSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
+  const formRef = useRef();
   const [errors, setErrors] = useState({});
+  const [isSending, setIsSending] = useState(false);
 
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-    setErrors({ ...errors, [e.target.name]: '' });
+  // 🔑 Replace with your actual credentials
+  const EMAILJS_CONFIG = {
+    serviceId: "service_z9nrpnh",
+    templateId: "template_o96o6re",
+    publicKey: "KMtxeuThzMItKsmDc",
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const formData = new FormData(formRef.current);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      message: formData.get("message"),
+    };
+
+    // Validation
     const newErrors = {};
-    if (!formData.name) newErrors.name = 'Please complete this required field.';
-    if (!formData.email) newErrors.email = 'Please complete this required field.';
-    if (!formData.phone) newErrors.phone = 'Please complete this required field.';
-    if (!formData.message) newErrors.message = 'Please complete this required field.';
+    if (!data.name) newErrors.name = "Please complete this required field.";
+    if (!data.email) newErrors.email = "Please complete this required field.";
+    if (!data.phone) newErrors.phone = "Please complete this required field.";
+    if (!data.message) newErrors.message = "Please complete this required field.";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -32,15 +38,40 @@ const ContactFormSection = () => {
     }
 
     setErrors({});
-    console.log('Form submitted:', formData);
+    setIsSending(true);
+
+    try {
+      const result = await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        {
+          title: `New Quote Request from ${data.name}`,
+          ...data,
+          time: new Date().toLocaleString(),
+        },
+        EMAILJS_CONFIG.publicKey
+      );
+
+      if (result.status === 200) {
+        alert("✅ Message sent successfully! We'll contact you shortly.");
+        formRef.current.reset();
+      } else {
+        alert("❌ Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      alert("❌ Failed to send message. Please try again or contact us directly.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
-    <section 
-     id="contact"
+    <section
+      id="contact"
       className="relative py-20 bg-cover bg-center bg-no-repeat flex items-center"
       style={{
-        backgroundImage: `url('https://www.hendersonthomasinvestigations.com/wp-content/uploads/2024/10/dreamstime_l_158418933-scaled.jpg')`
+        backgroundImage: `url('fraud-single.png')`,
       }}
     >
       <div className="absolute inset-0 bg-black/70"></div>
@@ -59,16 +90,21 @@ const ContactFormSection = () => {
                 Don't wait—contact Henderson Thomas Investigations today and take the first step towards clarity and resolution. Let us help you find the answers you need!
               </p>
             </div>
-            
+
             {/* Phone Number Section */}
             <div className="mb-8">
-              <a href="tel:07956490572" className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-6 py-4 hover:bg-white/20 transition-all duration-300 group">
+              <a
+                href="tel:07956490572"
+                className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-6 py-4 hover:bg-white/20 transition-all duration-300 group"
+              >
                 <div className="w-12 h-12 bg-cyan-400 rounded-full flex items-center justify-center group-hover:bg-cyan-300 transition-colors duration-300">
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-left">
                   <div className="text-cyan-300 text-sm font-medium">Call Now</div>
-                  <div className="text-white text-2xl font-bold tracking-wider">07956 490572</div>
+                  <div className="text-white text-2xl font-bold tracking-wider">
+                    07956 490572
+                  </div>
                 </div>
               </a>
             </div>
@@ -89,58 +125,63 @@ const ContactFormSection = () => {
 
           {/* Contact Form */}
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+            >
               <div className="space-y-5">
                 <input
                   type="text"
                   name="name"
                   placeholder="Your Name"
-                  className="w-full px-4 py-3 text-white bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400/50 placeholder-white/60 text-lg transition-all duration-200"
-                  value={formData.name}
-                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 text-white bg-white/10 border border-white/20 rounded-lg placeholder-white/60 text-lg"
                 />
-                {errors.name && <div className="text-red-400 text-left text-sm">{errors.name}</div>}
-                
+                {errors.name && (
+                  <div className="text-red-400 text-left text-sm">{errors.name}</div>
+                )}
+
                 <input
                   type="email"
                   name="email"
                   placeholder="Your Email"
-                  className="w-full px-4 py-3 text-white bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400/50 placeholder-white/60 text-lg transition-all duration-200"
-                  value={formData.email}
-                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 text-white bg-white/10 border border-white/20 rounded-lg placeholder-white/60 text-lg"
                 />
-                {errors.email && <div className="text-red-400 text-left text-sm">{errors.email}</div>}
-                
+                {errors.email && (
+                  <div className="text-red-400 text-left text-sm">{errors.email}</div>
+                )}
+
                 <input
                   type="tel"
                   name="phone"
                   placeholder="Phone Number"
-                  className="w-full px-4 py-3 text-white bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400/50 placeholder-white/60 text-lg transition-all duration-200"
-                  value={formData.phone}
-                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 text-white bg-white/10 border border-white/20 rounded-lg placeholder-white/60 text-lg"
                 />
-                {errors.phone && <div className="text-red-400 text-left text-sm">{errors.phone}</div>}
-                
+                {errors.phone && (
+                  <div className="text-red-400 text-left text-sm">{errors.phone}</div>
+                )}
+
                 <textarea
                   name="message"
                   placeholder="Tell us about your case"
                   rows="4"
-                  className="w-full px-4 py-3 text-white bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400/50 placeholder-white/60 resize-none text-lg transition-all duration-200"
-                  value={formData.message}
-                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 text-white bg-white/10 border border-white/20 rounded-lg placeholder-white/60 resize-none text-lg"
                 />
-                {errors.message && <div className="text-red-400 text-left text-sm">{errors.message}</div>}
-                
+                {errors.message && (
+                  <div className="text-red-400 text-left text-sm">{errors.message}</div>
+                )}
+
                 <div className="w-full flex justify-center pt-4">
                   <button
-                    onClick={handleSubmit}
-                    className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    type="submit"
+                    disabled={isSending}
+                    className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Get Your Free Quote
+                    {isSending ? "Sending..." : "Get Your Free Quote"}
                   </button>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

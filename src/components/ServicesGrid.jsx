@@ -42,7 +42,7 @@ const servicesData = [
   {
     id: 1,
     image:
-      "https://www.hendersonthomasinvestigations.co.uk/wp-content/uploads/2025/02/1-800x534.jpg",
+      "/covert.jpg",
     title: "Covert Surveillance",
     icon: Search,
     description:
@@ -52,7 +52,7 @@ const servicesData = [
   {
     id: 2,
     image:
-      "https://www.hendersonthomasinvestigations.co.uk/wp-content/uploads/2025/02/2-800x534.jpg",
+      "/missing.jpg",
     title: "Missing Person Investigation",
     icon: Users,
     description:
@@ -62,7 +62,7 @@ const servicesData = [
   {
     id: 3,
     image:
-      "https://www.hendersonthomasinvestigations.co.uk/wp-content/uploads/2025/02/3-800x534.jpg",
+      "/fraud.jpg",
     title: "Fraud Investigation",
     icon: Shield,
     description:
@@ -72,12 +72,21 @@ const servicesData = [
   {
     id: 4,
     image:
-      "https://www.hendersonthomasinvestigations.co.uk/wp-content/uploads/2025/02/4-800x534.jpg",
+      "/personal.jpg",
     title: "Personal Investigations",
     icon: Briefcase,
     description:
       "From background checks and infidelity investigations to online dating inquiries, our detectives handle sensitive cases with care and discretion, providing you with the truth you deserve.",
     link: "/services/personal",
+  },
+    {
+    id: 5,
+    image: "/background.jpg",
+    title: "Background Checking Services",
+    icon: Briefcase,
+    description:
+      "From criminal, employment, and financial checks to personal verification, our team provides accurate and confidential background checking services.",
+    link: "/services/background",
   },
 ];
 
@@ -100,11 +109,14 @@ const ServicesGrid = ({ latestOnly = false }) => {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {servicesToShow.map((service) => (
-            <ServiceCard key={service.id} {...service} />
-          ))}
-        </div>
+<div className="flex flex-wrap justify-center gap-10">
+  {servicesToShow.map((service) => (
+    <div className="flex-shrink-0 w-[360px]"> {/* fixed width per card */}
+      <ServiceCard key={service.id} {...service} />
+    </div>
+  ))}
+</div>
+
       </div>
     </section>
   );

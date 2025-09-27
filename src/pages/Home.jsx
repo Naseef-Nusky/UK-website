@@ -24,7 +24,7 @@ const HomePage = () => {
           </p>
           <a
             href="/about-us"
-            className="inline-block px-10 py-4 bg-[#0047b2] hover:bg-[#003380] text-white text-lg font-medium rounded-full shadow-lg transition-all duration-300"
+            className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg text-lg font-medium shadow-lg transition-all duration-300"
           >
             Read About Us
           </a>

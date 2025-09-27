@@ -7,7 +7,7 @@ const Services = () => {
       <div
         className="relative w-full h-96 md:h-[500px] flex items-center justify-center text-center"
         style={{
-          backgroundImage: `url('https://www.hendersonthomasinvestigations.co.uk/wp-content/uploads/2025/02/4-800x534.jpg')`,
+          backgroundImage: `url('/personal-single.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

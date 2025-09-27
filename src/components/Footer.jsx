@@ -8,7 +8,7 @@ const Footer = () => {
           {/* Company Logo */}
           <div className="mb-8">
             <img
-              src="https://www.hendersonthomasinvestigations.co.uk/wp-content/uploads/2025/02/henderson-thomas-investigations-600x142.png"
+              src="/logo.png"
               alt="Henderson Thomas Investigations"
               className="mx-auto max-w-sm w-full h-auto"
             />
