@@ -1,5 +1,6 @@
 import React from "react";
 import ServicesGrid from '../../components/ServicesGrid.jsx';
+import { Link } from "react-router-dom";
 const Services = () => {
   return (
     <section className="bg-gray-50">
@@ -99,12 +100,12 @@ const Services = () => {
 
         {/* Call to Action */}
         <div className="mt-12 text-center">
-          <a
-            href="/contact-us"
-            className="inline-block px-6 py-3 bg-[#0047b2] text-white rounded-lg shadow-md hover:bg-[#003080] transition-colors font-semibold"
-          >
-            Contact Us Today
-          </a>
+<Link
+  to="/contact-us"
+  className="inline-block px-6 py-3 bg-[#0047b2] text-white rounded-lg shadow-md hover:bg-[#003080] transition-colors font-semibold"
+>
+  Contact Us Today
+</Link>
         </div>
       </div>
       <ServicesGrid latestOnly={true} />

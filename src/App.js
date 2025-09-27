@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route,useLocation } from 'react-router-dom';
 
 // Components
 import Header from './components/Header.jsx';
@@ -15,9 +15,20 @@ import Fraud from './pages/services/Fraud.jsx';
 import Background from './pages/services/Background.jsx';
 import AboutUs from './pages/AboutUs.jsx';
 import CotactUs from './pages/ContactUs.jsx';
+import React, { useEffect } from 'react';
+// ScrollToTop Component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // smooth scroll to top
+  }, [pathname]);
+  return null;
+};
+
 function App() {
   return (
     <Router>
+       <ScrollToTop /> 
       <div className="min-h-screen bg-gray-50">
         <Header />
 
