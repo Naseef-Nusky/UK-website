@@ -25,25 +25,39 @@ const ContactPage = () => {
 
      
 <section className="py-10 bg-gray-50">
-  <div className="container mx-auto px-6 grid md:grid-cols-3 gap-6 text-center">
+  <div className="container mx-auto px-6 grid md:grid-cols-2 gap-6 text-center">
     
     <div>
       <h3 className="text-xl font-semibold text-[#0047b2]">Call Us</h3>
-      <p className="text-gray-700 mt-2">07956 490572</p>
+    <p className="text-gray-700 mt-2">
+  <a 
+    href="tel:07956490572" 
+    className="text-gray-700 hover:underline"
+  >
+    07956 490572
+  </a>
+</p>
+
     </div>
 
     <div>
       <h3 className="text-xl font-semibold text-[#0047b2]">Email Us</h3>
-      <p className="text-gray-700 mt-2">info@hendersonthomasinvestigations.com</p>
+      <p className="text-gray-700 mt-2">
+  <a 
+    href="mailto:info@hendersonthomasinvestigations.com" 
+    className="text-gray-700 hover:underline"
+  >
+    info@hendersonthomasinvestigations.com
+  </a>
+</p>
     </div>
-
-    <div>
+    {/* <div>
       <h3 className="text-xl font-semibold text-[#0047b2]">Visit Us</h3>
       <p className="text-gray-700 mt-2">
         1st Floor, 239 Kensington High St,<br />
         London, W8 6SN
       </p>
-    </div>
+    </div> */}
 
   </div>
 </section>
