@@ -102,12 +102,12 @@ const Header = () => {
             </div>
           </div>
 
-          <a href="/about-us" className="text-gray-700 hover:text-[#0047b2] transition-colors font-semibold">
-            ABOUT
-          </a>
-          <a href="/contact-us" className="text-gray-700 hover:text-[#0047b2] transition-colors font-semibold">
-            CONTACT
-          </a>
+<Link to="/about-us" className="text-gray-700 hover:text-[#0047b2] transition-colors font-semibold">
+  ABOUT
+</Link>
+<Link to="/contact-us" className="text-gray-700 hover:text-[#0047b2] transition-colors font-semibold">
+  CONTACT
+</Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -157,22 +157,12 @@ const Header = () => {
     </details>
 
     {/* About */}
-    <a
-      href="/about-us"
-      className="block text-gray-700 hover:text-[#0047b2]"
-      onClick={() => setIsOpen(false)}
-    >
-      ABOUT
-    </a>
-
-    {/* Contact */}
-    <a
-      href="/contact-us"
-      className="block text-gray-700 hover:text-[#0047b2]"
-      onClick={() => setIsOpen(false)}
-    >
-      CONTACT
-    </a>
+<Link to="/about-us" onClick={() => setIsOpen(false)} className="block text-gray-700 hover:text-[#0047b2]">
+  ABOUT
+</Link>
+<Link to="/contact-us" onClick={() => setIsOpen(false)} className="block text-gray-700 hover:text-[#0047b2]">
+  CONTACT
+</Link>
   </nav>
 </div>
 

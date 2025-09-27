@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
 const HomePage = () => {
   return (
     <main>
@@ -22,12 +22,12 @@ const HomePage = () => {
           <p className="text-lg md:text-2xl font-light mb-8">
             Specialist in private, corporate and legal investigations.
           </p>
-          <a
-            href="/about-us"
-            className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg text-lg font-medium shadow-lg transition-all duration-300"
-          >
-            Read About Us
-          </a>
+<Link
+  to="/about-us"
+  className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg text-lg font-medium shadow-lg transition-all duration-300"
+>
+  Read About Us
+</Link>
         </div>
       </section>
 
