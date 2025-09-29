@@ -15,6 +15,9 @@ import Fraud from './pages/services/Fraud.jsx';
 import Background from './pages/services/Background.jsx';
 import AboutUs from './pages/AboutUs.jsx';
 import CotactUs from './pages/ContactUs.jsx';
+import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
+import TermsAndConditions from './pages/TermsAndConditions.jsx';
+
 import React, { useEffect } from 'react';
 // ScrollToTop Component
 const ScrollToTop = () => {
@@ -56,6 +59,9 @@ function App() {
           <Route path="/services/background" element={<Background />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<CotactUs />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
          <Footer />
       </div>
