@@ -1,9 +1,9 @@
 import { createClient } from 'contentful';
 
 // Contentful configuration
-const SPACE_ID = process.env.REACT_APP_CONTENTFUL_SPACE_ID || 'your-space-id';
-const ACCESS_TOKEN = process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN || 'your-access-token';
-const PREVIEW_ACCESS_TOKEN = process.env.REACT_APP_CONTENTFUL_PREVIEW_ACCESS_TOKEN || 'your-preview-token';
+const SPACE_ID = process.env.REACT_APP_CONTENTFUL_SPACE_ID || 'babc4mhdh1yv';
+const ACCESS_TOKEN = process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN || 'qvCEq4p4NScALtr1yGyDRHxfgcvXa_hkTNfSlJSKtCw';
+const PREVIEW_ACCESS_TOKEN = process.env.REACT_APP_CONTENTFUL_PREVIEW_ACCESS_TOKEN || 'J01YndLVqAudpMZmeKmAuCCG69Ldr-wP56ro_s_83_0';
 
 // Create Contentful client for published content
 export const client = createClient({
