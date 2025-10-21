@@ -279,6 +279,12 @@ const Header = () => {
           </div>
 
           <Link
+            to="/blog"
+            className="text-gray-700 hover:text-[#0047b2] transition-colors font-semibold"
+          >
+            BLOG
+          </Link>
+          <Link
             to="/about-us"
             className="text-gray-700 hover:text-[#0047b2] transition-colors font-semibold"
           >
@@ -340,6 +346,13 @@ const Header = () => {
               </div>
             </details>
 
+            <Link
+              to="/blog"
+              onClick={() => setIsOpen(false)}
+              className="block text-gray-700 hover:text-[#0047b2]"
+            >
+              BLOG
+            </Link>
             <Link
               to="/about-us"
               onClick={() => setIsOpen(false)}

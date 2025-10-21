@@ -31,10 +31,10 @@ const ContactPage = () => {
       <h3 className="text-xl font-semibold text-[#0047b2]">Call Us</h3>
     <p className="text-gray-700 mt-2">
   <a 
-    href="tel:07956490572" 
+    href="tel:07826416466" 
     className="text-gray-700 hover:underline"
   >
-    07956 490572
+    07826 416466
   </a>
 </p>
 
@@ -44,10 +44,10 @@ const ContactPage = () => {
       <h3 className="text-xl font-semibold text-[#0047b2]">Email Us</h3>
       <p className="text-gray-700 mt-2">
   <a 
-    href="mailto:info@hendersonthomasinvestigations.com" 
+    href="mailto:hendersonthomasinvestigations@outlook.com" 
     className="text-gray-700 hover:underline"
   >
-    info@hendersonthomasinvestigations.com
+    hendersonthomasinvestigations@outlook.com
   </a>
 </p>
     </div>

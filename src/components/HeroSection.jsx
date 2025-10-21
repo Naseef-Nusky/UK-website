@@ -25,7 +25,7 @@ const HeroSection = () => {
             {/* Phone button */}
             <div className="flex flex-col ">
               <a
-                href="tel:07825416466"
+                href="tel:07826416466"
                 className="flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-[#00a4d6] transition-colors"
               >
                 <svg
@@ -41,7 +41,7 @@ const HeroSection = () => {
                     d="M3 5a2 2 0 012-2h3.28a2 2 0 011.94 1.515l.7 2.8a2 2 0 01-.45 1.95l-1.27 1.27a16.001 16.001 0 006.586 6.586l1.27-1.27a2 2 0 011.95-.45l2.8.7A2 2 0 0121 18.72V21a2 2 0 01-2 2h-1C9.163 23 1 14.837 1 5V4a2 2 0 012-2z"
                   />
                 </svg>
-                078 2541 6466
+                07826 416466
               </a>
 
               {/* Agent Available Now */}

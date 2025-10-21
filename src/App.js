@@ -17,6 +17,8 @@ import AboutUs from './pages/AboutUs.jsx';
 import CotactUs from './pages/ContactUs.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 import TermsAndConditions from './pages/TermsAndConditions.jsx';
+import BlogPage from './pages/Blog.jsx';
+import SingleBlogPost from './pages/SingleBlogPost.jsx';
 
 import React, { useEffect } from 'react';
 // ScrollToTop Component
@@ -60,8 +62,11 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<CotactUs />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          
+          {/* Blog routes */}
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<SingleBlogPost />} />
         </Routes>
          <Footer />
       </div>

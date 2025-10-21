@@ -1,0 +1,12 @@
+# Contentful Configuration
+# Rename this file to .env.local and replace the placeholder values with your actual Contentful credentials
+
+# Your Contentful Space ID (found in Settings > General Settings)
+REACT_APP_CONTENTFUL_SPACE_ID=your-space-id-here
+
+# Your Contentful Content Delivery API Access Token (found in Settings > API Keys)
+REACT_APP_CONTENTFUL_ACCESS_TOKEN=your-access-token-here
+
+# Optional: Content Preview API Access Token (for draft content)
+# REACT_APP_CONTENTFUL_PREVIEW_ACCESS_TOKEN=your-preview-token-here
+

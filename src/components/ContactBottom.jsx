@@ -94,7 +94,7 @@ const ContactFormSection = () => {
             {/* Phone Number Section */}
             <div className="mb-8">
               <a
-                href="tel:07956490572"
+                href="tel:07826416466"
                 className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-6 py-4 hover:bg-white/20 transition-all duration-300 group"
               >
                 <div className="w-12 h-12 bg-cyan-400 rounded-full flex items-center justify-center group-hover:bg-cyan-300 transition-colors duration-300">
@@ -103,7 +103,7 @@ const ContactFormSection = () => {
                 <div className="text-left">
                   <div className="text-cyan-300 text-sm font-medium">Call Now</div>
                   <div className="text-white text-2xl font-bold tracking-wider">
-                    07956 490572
+                    07826 416466
                   </div>
                 </div>
               </a>
